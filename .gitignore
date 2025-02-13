@@ -1,8 +1,11 @@
+#my files
+my_credentials.py
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-my_credentials.py
 
 # C extensions
 *.so
