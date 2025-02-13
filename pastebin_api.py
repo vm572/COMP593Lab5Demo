@@ -35,3 +35,6 @@ def pastebin_post(title, body_text, expiration, unlisted=True):
         print("Unsucessful")
     
     return paste_url  
+
+if __name__ == "__main__":
+    print("Please import this module.")
