@@ -1,5 +1,6 @@
 '''
 Lab5_vm.py - Requests a dad joke and pastes it to Pastebin
+COMP 593 Scripting Applications Winter 2025 Lab 5 Section 1
 
 Usage: 
 
@@ -16,17 +17,16 @@ from sys import argv
 
 def main():
   
+    # get the category from the command line arguments
     joke_category = get_subject()
-    joke = search_dad_jokes(joke_category, '1','1')
-    print(joke)
     
-    joke_post = pastebin_post(joke_category, joke, "1M", "1")
+    # search the dad jokes API
+    joke = search_dad_jokes(joke_category)
+    print(joke)
+    #post the joke using pastebin
+    
+    joke_post = pastebin_post(joke_category, joke, "1D", "1")
     print(joke_post)
-
-  #p = pastebin_post("test title", "test text", "1D","1")  
-
-  #print(p)  
-
 
 def get_subject():
     '''
@@ -38,7 +38,7 @@ def get_subject():
         
     if len(argv) > 1:
         joke_category = str(argv[1]).strip().lower()
-        print(f"You have selected a joke category of:{joke_category}")
+        print(f"You have selected a joke category of:{joke_category}. \n")
         return joke_category
     else:
         print("Please include a joke category argument")
